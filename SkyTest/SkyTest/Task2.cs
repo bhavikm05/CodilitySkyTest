@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace SkyTest
+namespace Task1
 {
     class Solution
     {        
