@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace Task2
+namespace Task1
 {
     class Solution
     {

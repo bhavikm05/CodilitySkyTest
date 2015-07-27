@@ -16,7 +16,7 @@ namespace Task3
     {
        
         [Test()]
-        public void Test1()
+        public void Test3()
         {
             Solution instance = new Solution();
             int[] A = new int[8];

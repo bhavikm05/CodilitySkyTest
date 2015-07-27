@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System;
 
 namespace SkyTest
 {
@@ -9,20 +10,28 @@ namespace SkyTest
             // write your code in C# 6.0 with .NET 4.5 (Mono)
             if(A.Length == 0)
                 return 0;
-            int indexLeft;
-            int totalLeft = 0;
-            for (indexLeft = 0; indexLeft < A.Length; indexLeft++)
+            try
             {
-                totalLeft += A[indexLeft];
-                int indexRight;
-                int totalRight = 0;
-                for (indexRight = indexLeft + 2; indexRight < A.Length; indexRight++)
+                int indexLeft;
+                int totalLeft = 0;
+                for (indexLeft = 0; indexLeft < A.Length; indexLeft++)
                 {
-                    totalRight += A[indexRight];                    
+                    totalLeft += A[indexLeft];
+                    int indexRight;
+                    int totalRight = 0;
+                    for (indexRight = indexLeft + 2; indexRight < A.Length; indexRight++)
+                    {
+                        totalRight += A[indexRight];
+                    }
+                    if (totalLeft == totalRight)
+                        return indexLeft + 1;
                 }
-                if (totalLeft == totalRight)
-                    return indexLeft +1;
             }
+            catch (System.Exception e)
+            {
+
+            }
+            
             return -1;
         }
     }
@@ -62,6 +71,22 @@ namespace SkyTest
            
             int P = instance.solution(A);
             Assert.AreEqual(P, 1);
+            //int P = instance.solution(A);
+            //Assert.AreEqual(P, 3);
+            //int P = instance.solution(A);
+            //Assert.AreEqual(P, 7);
+            //int P = instance.solution(A);
+            //Assert.AreEqual(P, -1);
+        }
+
+        [Test()]
+        public void TestOutOfRange()
+        {
+            Solution instance = new Solution();
+            int[] A = new int[2] {3434, 2323};
+
+            int P = instance.solution(A);
+            Assert.AreEqual(P, -1);
             //int P = instance.solution(A);
             //Assert.AreEqual(P, 3);
             //int P = instance.solution(A);
