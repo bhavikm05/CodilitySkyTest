@@ -36,7 +36,9 @@ namespace SkyTest
         }
     }
 
+    
     [TestFixture()]
+    [Ignore("Avoid")]
     public class SolutionTests
     {
        

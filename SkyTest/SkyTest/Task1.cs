@@ -1,44 +1,66 @@
 ﻿using NUnit.Framework;
+using System;
 
 namespace Task1
 {
     class Solution
     {
-        public int solution(int[] A)
+        public void solution(int N)
         {
-
-            return -1;
+            // write your code in C# 6.0 with .NET 4.5 (Mono)         
+            for (int integer = 1; integer <= N; integer++)
+            {
+                string currentLine = string.Empty;
+                if ((integer % 3) == 0)
+                    currentLine += "Fizz";
+                if ((integer % 5) == 0)
+                    currentLine += "Buzz";
+                if ((integer % 7) == 0)
+                    currentLine += "Woof";
+                if (currentLine == string.Empty)
+                    currentLine += integer;                
+                System.Console.WriteLine(currentLine);
+            }            
         }
     }
 
     [TestFixture()]
-    public class SolutionTests
+    public class Task1Tests
     {
-
+       
         [Test()]
         public void Test1()
         {
             Solution instance = new Solution();
-            int[] A = new int[8];
-            //A[0] = -1;
-            //A[1] = 3;
-            //A[2] = -4;
-            //A[3] = 5;
-            //A[4] = 1;
-            //A[5] = -6;
-            //A[6] = 2;
-            //A[7] = 1;
-            int P = instance.solution(A);
-            Assert.AreEqual(P, 1);
-            //int P = instance.solution(A);
-            //Assert.AreEqual(P, 3);
-            //int P = instance.solution(A);
-            //Assert.AreEqual(P, 7);
-            //int P = instance.solution(A);
-            //Assert.AreEqual(P, -1);
+            string result = 
+                    @"1
+                    2
+                    Fizz
+                    4
+                    Buzz
+                    Fizz
+                    Woof
+                    8
+                    Fizz
+                    Buzz
+                    11
+                    Fizz
+                    13
+                    Woof
+                    FizzBuzz
+                    16
+                    17
+                    Fizz
+                    19
+                    Buzz
+                    FizzWoof
+                    22
+                    23
+                    Fizz";            
+            instance.solution(24);
+            
         }
-
-
+       
     }
 
 

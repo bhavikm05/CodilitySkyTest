@@ -47,11 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Task2.cs" />
-    <Compile Include="Task4.cs" />
-    <Compile Include="Task3.cs" />
-    <Compile Include="Task1.cs" />
     <Compile Include="Class.cs" />
+    <Compile Include="Fibonnaci.cs" />
+    <Compile Include="LeastUniqueElement.cs" />
+    <Compile Include="Task2.cs" />
+    <Compile Include="Task1.cs" />
+    <Compile Include="Task3.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
